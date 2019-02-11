@@ -1,15 +1,22 @@
 class Account
 
+  attr_reader :balance
+
+  def initialize()
+      @balance = 0
+  end
+
   def deposit(amount)
-    if amount < 0
-      amount = 0
-    else
-      amount
-    end
+      update_balance(amount)
   end
 
   def withdraw(amount)
-    amount
+    amount = amount * -1
+    update_balance(amount)
+  end
+
+  def update_balance(amount)
+    @balance += amount
   end
 
 end

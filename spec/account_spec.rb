@@ -6,24 +6,21 @@ describe Account do
 
   context "#deposit" do
     it "amount deposited" do
-        expect(account.deposit(1000)).to eq(1000)
+      expect(account.deposit(100)).to eq(100)
     end
 
-    it "deposit amount is not negative" do
-        expect(account.deposit(-1)).to be >=(0)
+    it "amount increases balance by 300" do
+      account.deposit(100)
+      account.deposit(200)
+      expect(account.balance).to eq(300)
     end
-
-    # it "amount increases balance" do
-    # end
   end
 
   context "#withdraw" do
     it "amount withdrawn" do
-        expect(account.withdraw(500)).to eq(500)
+        account.deposit(200)
+        expect(account.withdraw(50)).to eq(150)
     end
-
-    # it "amount decreases balance" do
-    # end
   end
 
 end
