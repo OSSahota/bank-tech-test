@@ -30,9 +30,16 @@ describe Account do
   end
 
   # context "#statement" do
-  #   it "print" do
-  #     subject.deposit(1000)
+  #   it "prints heading" do
+  #     expect(subject.print_statement).to eq("date" + (" " * 6) + "|credit|debit|balance")
+  #   end
+  #
+  #   it "prints transaction" do
   #     expect(subject.print_statement).to be_a Array
+  #     # transaction_details = ["01/02/2019"|100|0|100]
+  #     # allow(subject).to receive(:print_statement).and_return(transaction_details)
+  #
   #   end
   # end
+
 end

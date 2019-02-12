@@ -39,6 +39,13 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/ossahota/Projects/tech-tests/bank-tech-test/lib/account.rb": [
@@ -82,8 +89,16 @@
         2,
         null,
         null,
+        1,
+        0,
+        null,
+        0,
+        0,
         null,
         null,
+        null,
+        null,
+        0,
         null,
         null,
         null,
@@ -101,6 +116,18 @@
         null,
         1,
         2,
+        null,
+        null,
+        null
+      ],
+      "/Users/ossahota/Projects/tech-tests/bank-tech-test/spec/statement_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -127,6 +154,6 @@
         null
       ]
     },
-    "timestamp": 1549931059
+    "timestamp": 1549986416
   }
 }

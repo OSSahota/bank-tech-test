@@ -38,10 +38,18 @@ class Account
     @transaction.save_transaction(@current_trans)
   end
 
-  # def print_statement
-  #   p "print_statement"
-  #   p "date|credit|debit|balance"
-  #   p @trans_hist
-  # end
+  def print_statement
+    puts "date" + (" " * 6) + "||credit||debit||balance"
+    # @transaction.trans_hist
+    @transaction.trans_hist.each do |nested_array|
+      nested_array.each do |key,value|
+        # p date = key[:date]
+        # p credit  = key[:credit]
+        # p debit = key[:debit]
+        # p balance = key[:balance]
+        puts key[:date] + "||" + "#{key[:credit]}" + "||" + "#{key[:debit]}" + "||" + "#{key[:balance]}"
+      end
+    end
+  end
 
 end
