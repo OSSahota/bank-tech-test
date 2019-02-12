@@ -6,9 +6,9 @@ class Account
               :current_trans
 
   def initialize(transaction = Transaction.new)
-      @transaction = transaction
       @balance = 0
       @current_trans = []
+      @transaction = transaction
   end
 
   def deposit(date,amount)
@@ -25,6 +25,29 @@ class Account
     update_transaction_history
   end
 
+  def print_statement
+    puts "date" + (" " * 6) + "||credit||debit||balance"
+
+    # @transaction.trans_hist is...
+    # an array of arrays with each nested array containig a hash representing one transaction
+    # e.g. [[{ date:"11/02/2019", credit:100, debit:"", balance:100 }],[{ date:, credit:"", debit:25, balance:75 }]]
+
+    # iterating through the main/outer array so that's each nested array
+    @transaction.trans_hist.each do |nested_array|
+      # now iterating though the hash within the nested array
+      nested_array.each do |key,value|
+        # p date = key[:date]
+        # p credit  = key[:credit]
+        # p debit = key[:debit]
+        # p balance = key[:balance]
+        # output the value for each key as one string in the format specfied below
+        puts key[:date] + "||" + "#{key[:credit]}" + "||" + "#{key[:debit]}" + "||" + "#{key[:balance]}"
+      end
+    end
+  end
+
+  private
+
   def update_balance(amount)
     @balance += amount
   end
@@ -36,20 +59,6 @@ class Account
 
   def update_transaction_history
     @transaction.save_transaction(@current_trans)
-  end
-
-  def print_statement
-    puts "date" + (" " * 6) + "||credit||debit||balance"
-    # @transaction.trans_hist
-    @transaction.trans_hist.each do |nested_array|
-      nested_array.each do |key,value|
-        # p date = key[:date]
-        # p credit  = key[:credit]
-        # p debit = key[:debit]
-        # p balance = key[:balance]
-        puts key[:date] + "||" + "#{key[:credit]}" + "||" + "#{key[:debit]}" + "||" + "#{key[:balance]}"
-      end
-    end
   end
 
 end
